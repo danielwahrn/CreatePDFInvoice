@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app-main__inner {
+  min-height: 800px;
+}
+ 
+.metismenu-item {
+  margin-top: 3rem !important;
+}
+
+.metismenu-item .active {
+  font-size: large;
+}
+
+.pe-7s-add-user{
+  font-size: x-large;
+  /* margin-right: 2rem; */
+}
+
+.sigCanvas {
+  border: 1px solid #000000;
+}
+
+.rt-resizable-header-content {
+  color: #6c757d
+}
+
+.help-block {
+  color: red
+}
+
+.card-header {
+  color: #cccccc
+}
+
+iframe {
+  width: 750px;
+  height: 600px;
+  margin: auto;
+}
+
+.pagination-bottom button {
+  color: #6c757d !important;
+}
+.pagination-bottom button:hover {
+  color: #6c757d !important;
+}
+
+.full_image {
+  height: 100vh;
+  width: 100%;
+}
+
+.text-right i{
+  font-size: 24px;
+}
+
+.rt-td{
+  word-break: break-all;
+}
