@@ -1,6 +1,4 @@
 import React, {Fragment} from 'react';
-import cx from 'classnames';
-import { Link } from 'react-router-dom';
 import {Button} from 'reactstrap'
 import {connect} from 'react-redux';
 

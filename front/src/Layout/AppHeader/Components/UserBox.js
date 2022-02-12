@@ -2,8 +2,7 @@ import React, {Fragment} from 'react';
 import {connect} from 'react-redux'
 import {
     DropdownToggle, DropdownMenu,
-    Nav, Col, Row, Button, NavItem, NavLink,
-    UncontrolledTooltip, UncontrolledButtonDropdown
+    Button, UncontrolledButtonDropdown
 } from 'reactstrap';
 
 import {

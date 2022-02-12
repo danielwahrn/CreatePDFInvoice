@@ -41,14 +41,11 @@ class HeaderLogo extends React.Component {
             enableClosedSidebar,
         } = this.props; */
 
-        const {
-        } = this.state;
-
         return (
             <Fragment>
                 <div className="app-header__logo">
                     <div className="logo-src ">
-                        <img src={avatar1}/>
+                        <img src={avatar1} alt="logo"/>
                     </div>
                     <div className="header__pane ml-auto">
                         {/* <div onClick={this.toggleEnableClosedSidebar}>

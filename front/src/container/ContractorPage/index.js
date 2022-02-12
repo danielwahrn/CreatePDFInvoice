@@ -4,12 +4,8 @@ import {generate} from 'generate-password'
 
 import {Col, Row, Card, CardBody, Button, CustomInput, CardHeader, Modal, ModalHeader, ModalFooter, ModalBody, FormGroup, Input,  Form, Label} from 'reactstrap';
 import ReactTable from "react-table";
-import Select from 'react-select';
-import { save, saveSync } from 'save-file';
+import { saveSync } from 'save-file';
 
-import { PDFDocument } from 'pdf-lib'
-
-import { Document, Page, pdfjs } from "react-pdf";
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import FileInput from '../../components/FileInput'
 
@@ -58,8 +54,6 @@ class ContractorPage extends React.Component {
     }
 
     componentDidMount() {
-        const {contractorlist} = this.state;
-
         const option = {
             method: "GET",
             header: {
@@ -97,7 +91,6 @@ class ContractorPage extends React.Component {
             numbers: true
         });
         
-        const {contractor} = this.state
         
         // this.setState({contractor:{
         //     ...contractor,
@@ -382,7 +375,7 @@ class ContractorPage extends React.Component {
     }
 
     render() {
-       const {taskModal, inviteModal, addModal, editModal, deleteModal, contractor, contractorlist, selectedContractor, submitted} = this.state
+       const {inviteModal, addModal, editModal, deleteModal, contractor, contractorlist, selectedContractor, submitted} = this.state
        const columns = [
         {
             Header: '',

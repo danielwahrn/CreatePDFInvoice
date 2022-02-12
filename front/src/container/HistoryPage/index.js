@@ -3,12 +3,9 @@ import { connect } from 'react-redux';
 import {Col, Row, Button,
     Card, CardBody,CardHeader,
     Modal, ModalHeader, ModalFooter, ModalBody,
-    FormGroup,Input,  Form, Label,
     } from 'reactstrap';
-import DatePicker from 'react-datepicker'
 import ReactTable from "react-table";
-import Select from 'react-select';
-import { save, saveSync } from 'save-file';
+import { saveSync } from 'save-file';
 
 import moment from 'moment';
 

@@ -1,8 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import store from '../helpers/store'
-
 import Pages from '../container';
 import { WelcomePage } from '../container/WelcomePage';
 import { InvitePage, LoginPage, RegisterPage } from '../container/Auth';

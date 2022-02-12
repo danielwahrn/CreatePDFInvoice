@@ -1,11 +1,10 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
-import {Col, Row, Card, CardBody, Button, CustomInput, CardHeader, InputAdornment, Icon,
+import {Col, Row, Card, CardBody, Button, CustomInput, CardHeader,
         FormGroup, Label, Input,
         Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import ReactTable from "react-table";
-import { save, saveSync } from 'save-file';
-import Select from 'react-select';
+import { saveSync } from 'save-file';
 // import makeAnimated from 'react-select/lib/animated';
 import FileInput from '../../components/FileInput'
 
@@ -30,7 +29,6 @@ class TasksPage extends React.Component {
         super(props);
 
         this.state = {
-            selectedTask: [],
             taskModal: false,
             taskList: [],
             selectedTask: [],

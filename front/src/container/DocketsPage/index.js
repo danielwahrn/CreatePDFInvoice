@@ -4,8 +4,7 @@ import {Col, Row, Card, CardBody, Button, Input, CardHeader, Modal, ModalHeader,
 import ReactTable from "react-table";
 import SignatureCanvas from 'react-signature-canvas';
 import { PDFDocument } from 'pdf-lib';
-import { save, saveSync } from 'save-file';
-import Select from 'react-select';
+import { saveSync } from 'save-file';
 import API from '../../Api'
 
 class DocketsPage extends React.Component {
@@ -272,8 +271,6 @@ class DocketsPage extends React.Component {
     trim = async (index) => {
         const { pdf } = this.state;
 
-        var index1= false, index2 = false;// to handle both sign for operator and constaractor
-    
         this.setState({ signing: true });
     // try{
         const trimmedDataURL = this.sigPad
@@ -329,17 +326,18 @@ class DocketsPage extends React.Component {
 
     removeBase64Mark(data) {
         var BASE64_MARKER = ';base64,';
-        if (data.indexOf(BASE64_MARKER) == -1) {
-            var parts = data.split(',');
+        var parts;
+        if (data.indexOf(BASE64_MARKER) === -1) {
+            parts = data.split(',');
             return parts[1]
         }
 
-        var parts = data.split(BASE64_MARKER);
+        parts = data.split(BASE64_MARKER);
         return parts[1]
     }
 
     async uploadDoc() {
-        const { selectedDocket, pdf, loadURL, manageremail} = this.state;
+        const { selectedDocket, loadURL, manageremail} = this.state;
         const {_id, status} = selectedDocket;
 
         // if (!pdf){
@@ -398,7 +396,7 @@ class DocketsPage extends React.Component {
     }
 
     handleManagerEmailChange(e){
-        const {name, value} = e.target;
+        const {value} = e.target;
 
         this.setState({manageremail: value})
     }
@@ -469,7 +467,7 @@ class DocketsPage extends React.Component {
             accessor: row => (
                 <div style={{display: "flex", justifyContent:"center"}}>
                 <Button outline className="btn-shadow btn-dashed" color="secondary" onClick={(e) => this.showDocketViewModal(row._id, row.path)} style={{marginRight: 10}}>
-                {row.status == 'Signed'? <i className="lnr-eye" /> : <i className="lnr-pencil" />}
+                {row.status === 'Signed'? <i className="lnr-eye" /> : <i className="lnr-pencil" />}
                 </Button>
                 <Button outline className="btn-shadow btn-dashed" color="secondary" onClick={(e) => this.saveAsFile(row._id)}>
                     <i className="pe-7s-diskette"  />
@@ -539,7 +537,7 @@ class DocketsPage extends React.Component {
                     <ModalHeader toggle={this.viewToggle}>{selectedDocket?selectedDocket.contractor:''}</ModalHeader>
                     <ModalBody>
                         {loadURL !== '' ? 
-                                    <iframe src={loadURL} style={{width:"750px", height:"600px" , margin:"auto"}} frameBorder="1"></iframe>
+                                    <iframe src={loadURL} style={{width:"750px", height:"600px" , margin:"auto"}} frameBorder="1" title="iframe"></iframe>
                                 : ''}
                         { selectedDocket.status === 'Waiting'?
                         <div>
@@ -579,9 +577,9 @@ class DocketsPage extends React.Component {
                     }
                     </ModalBody>
                     <ModalFooter>
-                        {selectedDocket.status == 'Waiting' && 
+                        {selectedDocket.status === 'Waiting' && 
                             <Button color="secondary"  onClick={this.uploadDoc.bind(this)}
-                                disabled={this.state.manageremail == '' || !this.state.signed1 || !this.state.signed2}
+                                disabled={this.state.manageremail === '' || !this.state.signed1 || !this.state.signed2}
                             >Save</Button>
                         }
                         {/* <Button color="secondary"  onClick={this.doReject}>Reject</Button>
