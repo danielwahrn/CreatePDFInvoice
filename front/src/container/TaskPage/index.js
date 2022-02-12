@@ -11,9 +11,6 @@ import Select from 'react-select';
 
 import moment from 'moment'
 
-import { PDFDocument } from 'pdf-lib';
-import SignatureCanvas from 'react-signature-canvas';
-import InputMask from 'react-input-mask';
 import API from '../../Api'
 // import { SignContainer, PdfContainer, SignButton } from './styles';
 import Api from '../../Api';
@@ -143,7 +140,7 @@ class TaskPage extends React.Component {
     }
 
     onHandleStartTimeChange(time) {
-        const {currentTask, selectedStartTime, selectedEndTime} = this.state
+        const {currentTask, selectedEndTime} = this.state
 
         this.setState({selectedStartTime: time})
 
@@ -163,7 +160,7 @@ class TaskPage extends React.Component {
     }
 
     onHandleEndTimeChange(time) {
-        const {currentTask, selectedStartTime, selectedEndTime} = this.state
+        const {currentTask, selectedStartTime} = this.state
 
         
 
@@ -197,7 +194,7 @@ class TaskPage extends React.Component {
     }
 
     onHandleLunchTimeChange(time) {
-        const {lunchTime, selectedLunchTime} = this.state
+        const {lunchTime} = this.state
 
         this.setState({
             lunchTime: {
@@ -225,7 +222,7 @@ class TaskPage extends React.Component {
         const {currentTask, user} = this.state;
         
         // var userid = user._id
-        if(currentTask.hour !== undefined && currentTask.start !== undefined && currentTask.end != undefined && currentTask._id != -1){
+        if(currentTask.hour !== undefined && currentTask.start !== undefined && currentTask.end !== undefined && currentTask._id !== -1){
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -248,7 +245,6 @@ class TaskPage extends React.Component {
     saveLunch() {
         const {lunchTime, user} = this.state;
         console.log('lunch', lunchTime.lunch)
-        var userid = user._id
         if(lunchTime.lunchhour !== undefined && lunchTime.lunch !== undefined){
             const requestOptions = {
                 method: 'POST',
@@ -270,8 +266,6 @@ class TaskPage extends React.Component {
 
     loadPDF() {
         const {workList, user} = this.state
-
-        var userid = user._id
 
         this.sendToggle();
         if(workList !== []){
@@ -322,15 +316,18 @@ class TaskPage extends React.Component {
 
     makeblob = function (dataURL) {
         var BASE64_MARKER = ';base64,';
-        if (dataURL.indexOf(BASE64_MARKER) == -1) {
-            var parts = dataURL.split(',');
-            var contentType = parts[0].split(':')[1];
-            var raw = decodeURIComponent(parts[1]);
+        var parts;
+        var contentType;
+        var raw;
+        if (dataURL.indexOf(BASE64_MARKER) === -1) {
+            parts = dataURL.split(',');
+            contentType = parts[0].split(':')[1];
+            raw = decodeURIComponent(parts[1]);
             return new Blob([raw], { type: contentType });
         }
-        var parts = dataURL.split(BASE64_MARKER);
-        var contentType = parts[0].split(':')[1];
-        var raw = window.atob(parts[1]);
+        parts = dataURL.split(BASE64_MARKER);
+        contentType = parts[0].split(':')[1];
+        raw = window.atob(parts[1]);
         var rawLength = raw.length;
 
         var uInt8Array = new Uint8Array(rawLength);

@@ -1,8 +1,6 @@
-import React, {Fragment, Component} from 'react';
-import { Link } from 'react-router-dom';
+import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
-import {Col, Row, Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import actions from './actions';
+import {Col, Row, Button, Form, FormGroup, Input} from 'reactstrap';
 import Api from '../../Api'
 import bg3 from '../../assets/utils/images/originals/citynights.jpg';
 

@@ -1,4 +1,4 @@
-import React, {Fragment, Component} from "react";
+import React, {Fragment} from "react";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Api from '../../Api'
@@ -49,7 +49,6 @@ class RegisterPage extends React.Component {
 
         this.setState({ submitted: true });
         const { user } = this.state;
-        const { dispatch } = this.props;
         this.setState({ submitted: true });
         
         console.log('first')
@@ -80,7 +79,6 @@ class RegisterPage extends React.Component {
     }
 
     render() {
-        const { registering  } = this.props;
         const { user, submitted, validation } = this.state;
         return (
             <Fragment>
