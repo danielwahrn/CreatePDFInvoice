@@ -250,7 +250,7 @@ class ContractorPage extends React.Component {
                 "Content-Type": "application/pdf"
             }
         }
-        /* fetch(`http://localhost:8001/api/viewtask`, {
+        /* fetch(`/api/viewtask`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/pdf"
@@ -312,7 +312,7 @@ class ContractorPage extends React.Component {
             taskModal: !this.state.taskModal
         });
 
-        fetch(`http://localhost:8001/api/storeTask`, {
+        fetch(`/api/storeTask`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/pdf"
