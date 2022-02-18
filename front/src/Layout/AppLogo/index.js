@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
     setEnableMobileMenu,
     setEnableMobileMenuSmall,
 } from '../../reducers/ThemeOptions'; */
-import avatar1 from '../../assets/utils/images/logo-inverse.png';
+// import avatar1 from '../../assets/utils/images/logo-inverse.png';
 class HeaderLogo extends React.Component {
     constructor(props) {
         super(props);
@@ -45,7 +45,7 @@ class HeaderLogo extends React.Component {
             <Fragment>
                 <div className="app-header__logo">
                     <div className="logo-src ">
-                        <img src={avatar1} alt="logo"/>
+                        {/* <img src={avatar1} alt="logo"/> */}
                     </div>
                     <div className="header__pane ml-auto">
                         {/* <div onClick={this.toggleEnableClosedSidebar}>

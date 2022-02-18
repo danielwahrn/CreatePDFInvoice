@@ -19,7 +19,7 @@ app.use(bodyParser.json({limit: '150mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../')));
+app.use('*', express.static(path.resolve(__dirname, '../')));
 
 app.use('/api', api);
 // app.use('./db', db);
