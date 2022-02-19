@@ -1,4 +1,4 @@
-const base_url = '/api';
+const base_url = 'http://localhost:8001/api';
 
 function apiFetch(url, params = {}) {
     params.headers = params.headers ? params.headers : {};

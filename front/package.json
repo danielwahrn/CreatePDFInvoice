@@ -1,9 +1,7 @@
 {
   "name": "ytd-front",
-  "homepage": "https://esadocket.primathon.com.au/",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8001",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
