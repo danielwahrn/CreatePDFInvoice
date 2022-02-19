@@ -4,6 +4,7 @@ const express = require('express'),
     compression = require('compression'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
+    path = require('path'),
     db = require('./db'),
     api = require('./api');
 
