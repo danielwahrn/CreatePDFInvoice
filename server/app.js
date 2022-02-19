@@ -20,14 +20,14 @@ app.use(bodyParser.json({limit: '150mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 // Have Node serve the files for our built React app
-app.use('*', express.static(path.resolve(__dirname, '../')));
+app.use('*', express.static(path.resolve(__dirname, '../front/build')));
 
 app.use('/api', api);
 // app.use('./db', db);
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../front/build', 'index.html'));
 });
 
 app.listen(port, host);
