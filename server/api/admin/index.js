@@ -166,5 +166,12 @@ router.post("/export2TextHistory", (req, res) => {
     })
 })
 
+router.post("/uploadmsds", (req, res) => {
+    AdminController.uploadMSDS(req.body).then(result => {
+        if(!result) return res.status(200).json({status: false});
+        return res.status(200).json({result: result, status: true})
+    })
+})
+
 
 module.exports = router

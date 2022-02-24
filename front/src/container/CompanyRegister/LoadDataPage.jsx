@@ -65,6 +65,14 @@ export default class LoadDataPage extends React.Component {
                                         
                                     </Col>
                                 </InputBox>
+                                <InputBox>
+                                    <Col md={6}>
+                                        <i className="lnr lnr-book" /> Add Material Safety Data Sheet
+                                    </Col>
+                                    <Col md={3}>
+                                        <FileInput api='/admin/uploadmsds'/>
+                                    </Col>
+                                </InputBox>
                         </Row>
                         <Col md={12} style={{textAlign: 'center', marginTop: 20}}>
                             <p>Have you completed all the above steps. Now it’s time to register your company. Click the below link to register your company.</p>

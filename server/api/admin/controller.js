@@ -21,7 +21,11 @@ const nodemailer = require('nodemailer'),
     Task = require("../../models/Task"),
     Docket = require("../../models/Docket"),
     History = require("../../models/History");
-const mongoose = require("mongoose");
+
+    const {
+        PDFDocument,
+    } = require('pdf-lib');
+
 class AdminController {
     getContractorList() {
         /**
@@ -774,6 +778,22 @@ class AdminController {
                 to: phone
             })
             .then(message => console.log(message.sid));
+    }
+
+    async uploadMSDS(req) {
+        try {
+            var pdfDoc = await PDFDocument.load(req.text);
+            if(pdfDoc !== null) {
+                const pdfBytes =  await pdfDoc.save();
+                await fs.writeFileSync(doc_conf.msds_doc, pdfBytes);
+            } else {
+                return false;
+            }
+        } catch (error) {
+            console.log("loading error", error)
+            return false;
+        }
+        return true;
     }
 }
 

@@ -38,6 +38,7 @@ module.exports = {
     step: 14,
     pattern_doc: 'public/pattern_doc/task_pattern.pdf',
     backup_doc: 'public/backup/' + dateStr +'_dockets.txt',
+    msds_doc: 'public/msds/msds.pdf',
     backup_history_doc: 'public/backup/' + dateStr +'_history.txt',
     backup_contractor_doc: 'public/backup/' + dateStr +'_contractors.txt',
     task_path: 'public/task_doc/',

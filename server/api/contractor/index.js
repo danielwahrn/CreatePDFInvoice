@@ -1,4 +1,6 @@
 const express = require('express');
+const doc_conf = require("../../config/doc");
+const fs = require("fs");
 
 const router = express.Router()
 
@@ -61,7 +63,17 @@ router.post("/loaddoc", (req, res) => {
 //     })
 // });
 
-
+router.get("/loadmsds", (req, res) => {
+    try{
+        var file= fs.createReadStream(doc_conf.msds_doc);
+        file.on('error', function(){return res.status(200).json({message: 'Not find file', status: false})})
+        file.pipe(res);
+    }
+    catch(error){
+        console.log(error)
+        return res.status(200).json({message: 'Not find file', status: false})
+    }
+});
 
 
 module.exports = router;

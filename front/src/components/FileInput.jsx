@@ -21,8 +21,6 @@ export default ({setData, api}) => {
             text = text.split(',')
             text = text[1]
 
-            console.log('text', text)
-
             formData.append('file', text)
 
             const option = {
