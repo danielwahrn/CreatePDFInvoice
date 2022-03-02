@@ -11,12 +11,11 @@ import Select from 'react-select';
 
 import moment from 'moment'
 
-import API from '../../Api'
 // import { SignContainer, PdfContainer, SignButton } from './styles';
 import Api from '../../Api';
 // import makeAnimated from 'react-select/lib/animated';
 
-class TaskPage extends React.Component {
+export default class TaskPage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -78,7 +77,7 @@ class TaskPage extends React.Component {
             }
         }
 
-        API.apiFetch('/contractor/loadtask', option)
+        Api.apiFetch('/contractor/loadtask', option)
         .then(data => {
             this.setState({taskList: data.result})
             data = data.result
@@ -101,7 +100,7 @@ class TaskPage extends React.Component {
             body: JSON.stringify({...user})
         }
 
-        API.apiFetch('/contractor/loadworkaday', option1)
+        Api.apiFetch('/contractor/loadworkaday', option1)
         .then(data => {
             this.setState({workList: data.result})
             
@@ -229,7 +228,7 @@ class TaskPage extends React.Component {
                 body: JSON.stringify({task:{...currentTask}, user: {...user} })
             };
             
-            API.apiFetch('/contractor/savetask', requestOptions)
+        Api.apiFetch('/contractor/savetask', requestOptions)
             .then(data => {
                 this.setState({workList: data.result})
             })
@@ -251,7 +250,7 @@ class TaskPage extends React.Component {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({...lunchTime, ...user })
             };
-            API.apiFetch('/contractor/savelunch', requestOptions)
+            Api.apiFetch('/contractor/savelunch', requestOptions)
             .then(data => {
                 this.setState({workList: data.result})
             })
@@ -349,7 +348,7 @@ class TaskPage extends React.Component {
             body: JSON.stringify({userid})
         }
 
-        API.apiFetch('/contractor/loadworkall', option)
+        Api.apiFetch('/contractor/loadworkall', option)
         .then(data => {
             this.setState({workList: data.result})
             
@@ -690,13 +689,3 @@ class TaskPage extends React.Component {
         );
     }
 }
-
-function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
-    return {
-        loggingIn
-    };
-}
-
-const connectedTaskPage = connect(mapStateToProps)(TaskPage);
-export { connectedTaskPage as TaskPage }; 

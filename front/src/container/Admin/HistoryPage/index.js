@@ -9,7 +9,7 @@ import { saveSync } from 'save-file';
 
 import moment from 'moment';
 
-import Api from '../../Api';
+import Api from '../../../Api';
 
 class HistoryPage extends React.Component {
     constructor(props) {

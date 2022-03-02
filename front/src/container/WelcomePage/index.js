@@ -9,7 +9,6 @@ class WelcomePages extends React.Component {
         super(props);
         this.props.history.push('/login')
         this.login = this.login.bind(this)
-        const { dispatch } = this.props;
     }
 
     login() {
@@ -27,14 +26,6 @@ class WelcomePages extends React.Component {
             </div> 
         );
     }
-}
-
-function mapStateToProps(state) {
-  /* const { alert, maps } = state;
-  return {
-    alert,
-    maps
-  }; */
 }
 
 const connectedWelcomePages = connect()(WelcomePages);

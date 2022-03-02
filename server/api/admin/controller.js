@@ -758,7 +758,7 @@ class AdminController {
                 from: mail.from,
                 to: email,
                 subject: 'Invite Login',
-                html: `<a href='http://localhost:3000/contractor/invite/${data}'> to signin into system , please click  here: </a>`
+                html: `<a href='http://ec2-3-25-237-156.ap-southeast-2.compute.amazonaws.com/contractor/invite/${data}'> to signin into system , please click  here: </a>`
             }
 
         }
@@ -773,7 +773,7 @@ class AdminController {
         if(phone != null)
         twilio.messages
             .create({
-                body: `<a href='http://localhost:3000/contractor/invite/${data}'> to signin into system , please click  here: </a>`,
+                body: `<a href='http://ec2-3-25-237-156.ap-southeast-2.compute.amazonaws.com/contractor/invite/${data}'> to signin into system , please click  here: </a>`,
                 from: twilio_conf.fromPhone,
                 to: phone
             })

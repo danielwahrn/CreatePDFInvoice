@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {Row, Col, Card, Button} from 'reactstrap'
 import styled from 'styled-components'
-import bg1 from '../../assets/utils/images/company/11.jpg'
+import bg1 from '../../../assets/utils/images/company/11.jpg'
 const Box = styled.div`
     padding: 100px 200px;
 `;

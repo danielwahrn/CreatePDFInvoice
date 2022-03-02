@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import {Row, Button, Col, Card} from 'reactstrap';
 import styled from 'styled-components';
-import FileInput from '../../components/FileInput';
-import bg1 from '../../assets/utils/images/company/11.jpg';
+import FileInput from '../../../components/FileInput';
+import bg1 from '../../../assets/utils/images/company/11.jpg';
 const InputBox = styled.div`
     display: flex;
     justify-content: space-between;
