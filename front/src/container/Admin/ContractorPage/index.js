@@ -7,9 +7,9 @@ import ReactTable from "react-table";
 import { saveSync } from 'save-file';
 
 import 'react-pdf/dist/Page/AnnotationLayer.css';
-import FileInput from '../../components/FileInput'
+import FileInput from '../../../components/FileInput'
 
-import Api from '../../Api';
+import Api from '../../../Api';
 
 class ContractorPage extends React.Component {
     constructor(props) {
@@ -591,7 +591,7 @@ class ContractorPage extends React.Component {
                             <Label className="mr-sm-2">User Name: </Label>
                             <Input name="username" placeholder="Input..." value={selectedContractor?selectedContractor.username:''} onChange={this.onUpdateHandleChange}/>
                             {submitted && !selectedContractor.username &&
-                                <div className="help-block">>User Name is required</div>
+                                <div className="help-block">User Name is required</div>
                             }
                         </FormGroup>
                         <FormGroup className="mb-2 mr-sm-2 ">

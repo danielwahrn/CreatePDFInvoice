@@ -42,8 +42,8 @@ function getToken() {
     return window.localStorage.getItem("user_token");
 }
 
-function saveToken() {
-    return window.localStorage.getItem("user_token");
+function saveToken(token) {
+    return localStorage.setItem("user_token", token);
 }
 
 function getCurrentUser() {
@@ -58,6 +58,18 @@ function getCurrentUser() {
 
 function isAdmin() {
     return getCurrentUser() && getCurrentUser().role === 'admin';
+}
+
+function isContractor() {
+    return getCurrentUser() && getCurrentUser().role === 'contractor';
+}
+
+function enableMSDS() {
+    return window.localStorage.getItem("enableMSDS");
+}
+
+function updateMSDS() {
+    return localStorage.setItem("enableMSDS", true);
 }
 
 function saveUser(data) {
@@ -81,9 +93,12 @@ export default {
     apiFetchStream,
     logout,
     isAdmin,
+    isContractor,
     saveUser,
     removeUser,
     saveToken,
     getToken,
-    getCurrentUser
+    getCurrentUser,
+    enableMSDS,
+    updateMSDS
 };

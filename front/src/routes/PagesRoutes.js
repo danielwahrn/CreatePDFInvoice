@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-import  {ContractorPage}  from '../container/ContractorPage';
-import  {DocketsPage}  from '../container/DocketsPage';
-import { TasksPage } from '../container/TasksPage';
-import { HistoryPage } from '../container/HistoryPage';
-import { InformationPage } from '../container/InformationPage';
+import  {ContractorPage}  from '../container/Admin/ContractorPage';
+import  {DocketsPage}  from '../container/Admin/DocketsPage';
+import { TasksPage } from '../container/Admin/TasksPage';
+import { HistoryPage } from '../container/Admin/HistoryPage';
+import { InformationPage } from '../container/Admin/InformationPage';
 
 
 export default function PagesRoutes() {

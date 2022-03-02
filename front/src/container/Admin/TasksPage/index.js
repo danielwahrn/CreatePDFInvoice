@@ -6,9 +6,9 @@ import {Col, Row, Card, CardBody, Button, CustomInput, CardHeader,
 import ReactTable from "react-table";
 import { saveSync } from 'save-file';
 // import makeAnimated from 'react-select/lib/animated';
-import FileInput from '../../components/FileInput'
+import FileInput from '../../../components/FileInput'
 
-import Api from '../../Api';
+import Api from '../../../Api';
 
 const data = [
     {

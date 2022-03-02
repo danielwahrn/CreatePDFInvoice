@@ -1,5 +1,4 @@
-import React, {Fragment, Component} from 'react';
-import { connect } from 'react-redux';
+import React, {Fragment} from 'react';
 
 import AppHeader from '../../Layout/AppHeader';
 import AppSidebar from '../../Layout/AppSidebar';

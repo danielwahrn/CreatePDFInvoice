@@ -5,7 +5,7 @@ import Pages from '../container';
 import { WelcomePage } from '../container/WelcomePage';
 import { InvitePage, LoginPage, RegisterPage } from '../container/Auth';
 import { TaskPage } from '../container/TaskPage';
-import { InstructionPage, LoadDataPage } from '../container/CompanyRegister';
+import { InstructionPage, LoadDataPage } from '../container/Auth/CompanyRegister';
 import PrivateRoute from './PrivateRoute';
 import InviteRoute from './InviteRoute';
 import EmptyPage from '../container/404';
@@ -18,6 +18,7 @@ export default function MainRoutes() {
           <PrivateRoute path="/dashboard" component={Pages} />
           <InviteRoute path="/contractor/task" component={TaskPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/contractor/msds" component={LoginPage} />
           <Route path="/contractor/invite/*" component={InvitePage} />
           <InviteRoute path="/contractor/invite" component={InvitePage} />
           <InviteRoute path="/contractor" component={InvitePage} />
