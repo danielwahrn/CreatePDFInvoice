@@ -61,7 +61,7 @@ function isAdmin() {
 }
 
 function isContractor() {
-    return getCurrentUser() && getCurrentUser().role === 'contractor';
+    return getCurrentUser() && !isAdmin();
 }
 
 function enableMSDS() {
